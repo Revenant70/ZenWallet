@@ -90,4 +90,4 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Acknowledgments
 
-I would like to thank the people over at [Cruip](Cruip.com "Beautiful Tailwind CSS templates for your next project") for creating a stunning frontend template and letting the public use it.
+I would like to thank the people over at Cruip.com for creating a stunning frontend template and letting the public use it.
