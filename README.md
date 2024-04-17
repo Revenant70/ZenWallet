@@ -25,7 +25,7 @@ To get started with this template, follow these steps:
 1. Clone the repository:
 
     ```bash
-    git clone <repository-url>
+    git clone https://github.com/Revenant70/Spring-React-Template.git
     ```
 
 2. Navigate to the project directory:
