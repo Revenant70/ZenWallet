@@ -42,7 +42,14 @@ To get started with this template, follow these steps:
     npm run build
     ```
 
-4. Build the backend:
+4. Add config files to backend gitignore
+    ```
+    Dockerfile
+    application.properties
+    docker-compose.yaml
+    ```
+
+5. Build the backend:
 
     ```bash
     cd ..
@@ -50,7 +57,7 @@ To get started with this template, follow these steps:
     mvn package -DskipTests
     ```
 
-5. Run the application using Docker:
+6. Run the application using Docker:
 
     ```bash
     cd ..
