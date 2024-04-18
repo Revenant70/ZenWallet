@@ -35,6 +35,5 @@ build/
 ### Config and keys ###
 application.properties
 docker-compose.yaml
-Dockerfile
 
 so57488831.p12
