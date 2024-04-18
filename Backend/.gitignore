@@ -33,7 +33,5 @@ build/
 .vscode/
 
 ### Config and keys ###
-application.properties
-docker-compose.yaml
 
 so57488831.p12
