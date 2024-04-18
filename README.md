@@ -45,6 +45,7 @@ To get started with this template, follow these steps:
     ```
 
 4. Add config files to backend gitignore
+
     ```
     Dockerfile
     application.properties
