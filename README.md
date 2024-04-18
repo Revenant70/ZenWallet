@@ -40,6 +40,8 @@ To get started with this template, follow these steps:
     cd Frontend/
     npm install
     npm run build
+    cd ..
+    cd Backend/
     ```
 
 4. Add config files to backend gitignore
@@ -52,8 +54,6 @@ To get started with this template, follow these steps:
 5. Build the backend:
 
     ```bash
-    cd ..
-    cd Backend/
     mvn package -DskipTests
     ```
 
