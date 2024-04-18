@@ -40,17 +40,24 @@ To get started with this template, follow these steps:
     cd Frontend/
     npm install
     npm run build
-    ```
-
-4. Build the backend:
-
-    ```bash
     cd ..
     cd Backend/
+    ```
+
+4. Add config files to backend gitignore
+    ```
+    Dockerfile
+    application.properties
+    docker-compose.yaml
+    ```
+
+5. Build the backend:
+
+    ```bash
     mvn package -DskipTests
     ```
 
-5. Run the application using Docker:
+6. Run the application using Docker:
 
     ```bash
     cd ..
@@ -87,7 +94,3 @@ Contributions are welcome! Feel free to submit issues and pull requests.
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-
-## Acknowledgments
-
-I would like to thank the people over at Cruip.com for creating a stunning frontend template and letting the public use it.
