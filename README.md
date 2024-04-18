@@ -94,7 +94,3 @@ Contributions are welcome! Feel free to submit issues and pull requests.
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-
-## Acknowledgments
-
-I would like to thank the people over at Cruip.com for creating a stunning frontend template and letting the public use it.
