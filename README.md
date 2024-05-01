@@ -46,7 +46,7 @@ To get started with this template, follow these steps:
 
 4. Add config files to backend gitignore
 
-    ```
+    ```gitignore
     Dockerfile
     application.properties
     docker-compose.yaml
