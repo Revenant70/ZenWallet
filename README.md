@@ -34,7 +34,13 @@ To get started with this template, follow these steps:
     cd spring-react-template
     ```
 
-3. Build the frontend:
+3. change remote repo to your project:
+
+    ```bash
+    git remote set-url origin <Your new url>
+    ```
+
+5. Build the frontend:
 
     ```bash
     cd Frontend/
@@ -44,7 +50,7 @@ To get started with this template, follow these steps:
     cd Backend/
     ```
 
-4. Add config files to backend gitignore
+6. Add config files to backend gitignore
 
     ```gitignore
     Dockerfile
@@ -52,13 +58,13 @@ To get started with this template, follow these steps:
     docker-compose.yaml
     ```
 
-5. Build the backend:
+7. Build the backend:
 
     ```bash
     mvn package -DskipTests
     ```
 
-6. Run the application using Docker:
+8. Run the application using Docker:
 
     ```bash
     cd ..
