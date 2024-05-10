@@ -1,9 +1,99 @@
-
+import { useState } from "react";
 
 export default function Login() {
-    return (
-        <>
-            
-        </>
-    )
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    try {
+      // Perform authentication logic here
+      // For example, send the username and password to your backend server
+      const response = await fetch("/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username, password }),
+      });
+
+      if (response.ok) {
+        // Redirect user to profile page or perform any other action on successful login
+        window.location.href = "/profile";
+      } else {
+        // Handle login failure, display error message, etc.
+        setError("Incorrect username or password");
+      }
+    } catch (error) {
+      console.error("Error during login:", error);
+    }
+  };
+
+  return (
+    <>
+      <div className="h-screen w-screen dark:bg-nightTheme-background bg-dayTheme-background flex justify-center items-center">
+        <div className=" h-2/5 w-4/5 md:w-3/6 rounded-2xl dark:bg-nightTheme-primary bg-dayTheme-primary">
+          <div>
+            <h2 className="mt-6 text-center dark:text-nightTheme-text text-dayTheme-text text-h5">
+              Sign in to your account
+            </h2>
+          </div>
+          <form className="mt-8 flex flex-col justify-center items-center max-w-5xl" onSubmit={handleSubmit}>
+            <input type="hidden" name="remember" value="true" />
+            <div className="">
+              <div>
+                <p className="text-p mx-3 text-dayTheme-text dark:text-nightTheme-text ">
+                    Username
+                </p>
+                <label htmlFor="username" className="sr-only">
+                  Username
+                </label>
+                <input
+                  id="username"
+                  name="username"
+                  type="text"
+                  autoComplete="username"
+                  required
+                  className="p-2 m-3 rounded-lg text-dayTheme-text"
+                  placeholder="Username"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                />
+              </div>
+              <p className="text-p mx-3 text-dayTheme-text dark:text-nightTheme-text ">
+                    Password
+                </p>
+              <div>
+                <label htmlFor="password" className="sr-only">
+                  Password
+                </label>
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  autoComplete="current-password"
+                  required
+                  className="p-2 m-3 rounded-lg text-dayTheme-text"
+                  placeholder="Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </div>
+            </div>
+            {error && <p className="text-red-500 text-xs italic">{error}</p>}
+            <div className="mt-4 w-48 flex justify-start items-start">
+              <button
+                type="submit"
+                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-dayTheme-text dark:text-nightTheme-text  bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              >
+                Sign in
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </>
+  );
 }

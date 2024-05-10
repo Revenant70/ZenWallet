@@ -1,8 +1,16 @@
 import { useEffect, useState } from "react";
 
+import { useNavigate } from "react-router-dom";
+
 import womanAtBeachDark from "../assets/undraw_beach_day_cserdark.svg"
 
 export default function LandingPage() {
+
+  const navigate = new useNavigate();
+
+  const goTologin = () => {
+    navigate("/login")
+  }
 
   return (
     <>
@@ -38,7 +46,7 @@ export default function LandingPage() {
         <div className="w-full pb-6 justify-center items-center text-center">
           <p className="text-p text-dayTheme-text dark:text-nightTheme-text">
             Already have an account?{" "}
-            <button>
+            <button onClick={goTologin}>
               <span className=" border-b-4 border-dayTheme-secondary dark:border-nightTheme-secondary">
                 Log in
               </span>

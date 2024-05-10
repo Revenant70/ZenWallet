@@ -7,7 +7,7 @@ function App() {
     <>
     <Routes>
       <Route path='*' element={<Navigate to="/landingpage" /> } /> 
-      <Route path='/login'  />
+      <Route path='/login' />
     </Routes>
     </>
   )

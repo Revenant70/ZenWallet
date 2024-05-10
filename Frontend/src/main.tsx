@@ -10,6 +10,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { createRoot } from 'react-dom/client'
+import Login from './components/Login.tsx';
 
 const root = createRoot(
   document.getElementById("root") as HTMLElement
@@ -24,7 +25,12 @@ const router = createBrowserRouter([
   {
     path: '/landingpage',
     element: <Layout />
+  },
+  {
+    path: "/login",
+    element: <Login />
   }
+
 ])
 
 root.render(
