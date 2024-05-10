@@ -7,17 +7,30 @@ export default function LandingPage() {
   return (
     <>
       <div className="h-screen w-full flex flex-col justify-around items-center">
-        <div className=" h-5/6 w-full">
+        <div className=" h-full w-full">
           <h2 className="font text-h5 text-dayTheme-text dark:text-nightTheme-text">
             ZenWallet
           </h2>
-          <h1 className="pt-16 text-h2 text-dayTheme-text dark:text-nightTheme-text leading-16">
+          <h1 className="pt-16 ml-0 md:text-h2 lg:text-h1 text-dayTheme-text dark:text-nightTheme-text leading-16 hidden md:block max-w-4xl md:ml-24 md:leading-snug">
+            Welcome to ZenWallet: Your {" "}
+            <span className="border-b-4 border-dayTheme-secondary  dark:border-nightTheme-secondary">
+            Path
+            </span>
+             {" "}to Financial Harmony
+          </h1>
+          <p className="pt-3 hidden lg:block text-h5 ml-24 text-dayTheme-text dark:text-nightTheme-text max-w-xl">
+            Unlock the secrets to financial peace. Experience clarity and balance in your finances with ZenWallet.
+          </p>
+
+          <h1 className="pt-16 text-h2 text-dayTheme-text dark:text-nightTheme-text leading-16 block md:hidden">
             Plan before you{" "}
             <span className="border-b-4 border-dayTheme-secondary  dark:border-nightTheme-secondary">
               spend
             </span>
           </h1>
-          <button className="ml-2 mt-16 p-12 py-4 bg-dayTheme-text dark:bg-nightTheme-text text-p text-dayTheme-background dark:text-nightTheme-background rounded-xl">
+
+         
+          <button className="ml-2 md:ml-24 mt-16 p-12 py-4 bg-dayTheme-text dark:bg-nightTheme-text text-p text-dayTheme-background dark:text-nightTheme-background rounded-xl">
             Get Started
           </button>
         </div>
