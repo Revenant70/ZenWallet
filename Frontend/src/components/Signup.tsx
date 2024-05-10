@@ -4,16 +4,17 @@ import { useState } from "react";
 
 import { useNavigate } from "react-router-dom";
 
-export default function Login() {
+export default function Signup() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
   const [error, setError] = useState("");
 
   const navigate = new useNavigate();
 
- const sendBackToLandingPage = () => {
-    navigate("/landingpage")
- }
+  const sendBackToLandingPage = () => {
+    navigate("/landingpage");
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -44,26 +45,29 @@ export default function Login() {
   return (
     <>
       <div className="h-screen w-screen dark:bg-nightTheme-background bg-dayTheme-background flex justify-center items-center">
-      <div className="fixed top-10 left-10 z-50 cursor-pointer ">
-        <FontAwesomeIcon
-          className="btn btn-md text-dayTheme-text dark:text-nightTheme-text"
-          icon={faArrowLeft}
-          size="2xl"
-          onClick={sendBackToLandingPage}
-        />
-      </div>
-        <div className=" h-2/5 w-4/5 md:w-3/6 lg:w-2/6 rounded-2xl dark:bg-nightTheme-primary bg-dayTheme-primary">
+        <div className="fixed top-10 left-10 z-50 cursor-pointer ">
+          <FontAwesomeIcon
+            className="btn btn-md text-dayTheme-text dark:text-nightTheme-text"
+            icon={faArrowLeft}
+            size="2xl"
+            onClick={sendBackToLandingPage}
+          />
+        </div>
+        <div className=" h-3/5 w-4/5 md:w-3/6 lg:w-2/6 rounded-2xl dark:bg-nightTheme-primary bg-dayTheme-primary">
           <div>
-            <h2 className="mt-6 text-center dark:text-nightTheme-text text-dayTheme-text text-h5">
-              Sign in to your account
+            <h2 className="mt-8 text-center dark:text-nightTheme-text text-dayTheme-text text-h5">
+              Create a new account
             </h2>
           </div>
-          <form className="mt-8 flex flex-col justify-center items-center max-w-5xl" onSubmit={handleSubmit}>
+          <form
+            className="mt-8 flex flex-col justify-center items-center max-w-5xl"
+            onSubmit={handleSubmit}
+          >
             <input type="hidden" name="remember" value="true" />
             <div className="">
               <div>
                 <p className="text-p mx-3 text-dayTheme-text dark:text-nightTheme-text ">
-                    Username
+                  Username
                 </p>
                 <label htmlFor="username" className="sr-only">
                   Username
@@ -81,8 +85,8 @@ export default function Login() {
                 />
               </div>
               <p className="text-p mx-3 text-dayTheme-text dark:text-nightTheme-text ">
-                    Password
-                </p>
+                Password
+              </p>
               <div>
                 <label htmlFor="password" className="sr-only">
                   Password
@@ -99,6 +103,25 @@ export default function Login() {
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
+              <p className="text-p mx-3 text-dayTheme-text dark:text-nightTheme-text ">
+                Email
+              </p>
+              <div>
+                <label htmlFor="password" className="sr-only">
+                  Email
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autoComplete="current-password"
+                  required
+                  className="p-2 m-3 rounded-lg text-dayTheme-text"
+                  placeholder="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </div>
             </div>
             {error && <p className="text-red-500 text-xs italic">{error}</p>}
             <div className="mt-4 w-48 flex justify-start items-start">
@@ -106,7 +129,7 @@ export default function Login() {
                 type="submit"
                 className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-dayTheme-text dark:text-nightTheme-text  bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
               >
-                Sign Up
+                Sign in
               </button>
             </div>
           </form>

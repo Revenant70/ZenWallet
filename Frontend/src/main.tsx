@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 import { createRoot } from 'react-dom/client'
 import Login from './components/Login.tsx';
+import Signup from './components/Signup.tsx';
 
 const root = createRoot(
   document.getElementById("root") as HTMLElement
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />
+  },
+  {
+    path: "/signup",
+    element: <Signup />
   }
 
 ])

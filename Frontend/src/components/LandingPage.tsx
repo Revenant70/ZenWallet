@@ -12,6 +12,10 @@ export default function LandingPage() {
     navigate("/login")
   }
 
+  const goToSignup = () => {
+    navigate("/signup")
+  }
+
   return (
     <>
       <div className="h-screen w-full flex flex-col justify-around items-center">
@@ -38,7 +42,7 @@ export default function LandingPage() {
           </h1>
 
          
-          <button className="ml-2 md:ml-24 mt-16 p-12 py-4 bg-dayTheme-text dark:bg-nightTheme-text text-p text-dayTheme-background dark:text-nightTheme-background rounded-xl">
+          <button onClick={goToSignup} className="ml-2 md:ml-24 mt-16 p-12 py-4 bg-dayTheme-text dark:bg-nightTheme-text text-p text-dayTheme-background dark:text-nightTheme-background rounded-xl">
             Get Started
           </button>
         </div>
