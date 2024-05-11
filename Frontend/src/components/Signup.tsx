@@ -1,6 +1,6 @@
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons/faArrowLeft";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { useNavigate } from "react-router-dom";
 
@@ -15,6 +15,18 @@ export default function Signup() {
   const sendBackToLandingPage = () => {
     navigate("/landingpage");
   };
+
+  useEffect(() => {
+    const prefersDarkMode = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
+
+    if (prefersDarkMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -53,9 +65,9 @@ export default function Signup() {
             onClick={sendBackToLandingPage}
           />
         </div>
-        <div className=" h-3/5 w-4/5 md:w-3/6 lg:w-2/6 rounded-2xl dark:bg-nightTheme-primary bg-dayTheme-primary">
+        <div className=" h-3/5 w-4/5 md:w-3/6 lg:w-2/6 rounded-2xl dark:bg-nightTheme-primary bg-dayTheme-primary flex flex-col justify-center items-center">
           <div>
-            <h2 className="mt-8 text-center dark:text-nightTheme-text text-dayTheme-text text-h5">
+            <h2 className="text-center dark:text-nightTheme-text text-dayTheme-text text-h5">
               Create a new account
             </h2>
           </div>
@@ -129,7 +141,7 @@ export default function Signup() {
                 type="submit"
                 className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-dayTheme-text dark:text-nightTheme-text  bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
               >
-                Sign in
+                Sign up
               </button>
             </div>
           </form>

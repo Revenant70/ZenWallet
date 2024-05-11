@@ -12,6 +12,7 @@ import {
 import { createRoot } from 'react-dom/client'
 import Login from './components/Login.tsx';
 import Signup from './components/Signup.tsx';
+import Home from './components/Home.tsx';
 
 const root = createRoot(
   document.getElementById("root") as HTMLElement
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
   {
     path: "/signup",
     element: <Signup />
+  },
+  {
+    path: "/home",
+    element: <Home />
   }
 
 ])

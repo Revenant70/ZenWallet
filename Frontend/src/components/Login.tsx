@@ -1,6 +1,6 @@
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons/faArrowLeft";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { useNavigate } from "react-router-dom";
 
@@ -41,7 +41,19 @@ export default function Login() {
     }
   };
 
+  useEffect(() => {
+    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (prefersDarkMode) {
+      document.documentElement.classList.add("dark")
+    } else {
+      document.documentElement.classList.remove("dark")
+    }
+}, [])
+
   return (
+    
+
     <>
       <div className="h-screen w-screen dark:bg-nightTheme-background bg-dayTheme-background flex justify-center items-center">
       <div className="fixed top-10 left-10 z-50 cursor-pointer ">
@@ -106,7 +118,7 @@ export default function Login() {
                 type="submit"
                 className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-dayTheme-text dark:text-nightTheme-text  bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
               >
-                Sign Up
+                Sign in
               </button>
             </div>
           </form>

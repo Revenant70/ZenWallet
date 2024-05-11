@@ -16,6 +16,18 @@ export default function LandingPage() {
     navigate("/signup")
   }
 
+  useEffect(() => {
+    const prefersDarkMode = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
+
+    if (prefersDarkMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, []);
+
   return (
     <>
       <div className="h-screen w-full flex flex-col justify-around items-center">
